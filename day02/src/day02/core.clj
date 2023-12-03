@@ -7,20 +7,19 @@
 (def input (slurp "input.txt"))
 
 
-(def red 12)
-(def green 13)
-(def blue 14)
+(def color-counts
+  {"red" 12
+   "green" 13
+   "blue" 14})
+
 
 (def games (str/split-lines input))
 
 
 (defn check-color-available
   [color count]
-  (cond
-    (= color "red") (if (> count red) false true)
-    (= color "green") (if (> count green) false true)
-    (= color "blue") (if (> count blue) false true)
-    :else true))
+  (let [available (get color-counts color)]
+    (and available (>= available count))))
 
 
 (defn process-rounds
