@@ -86,9 +86,7 @@ fn compute(races: Vec<Race>) -> u64 {
 
 #[cfg(test)]
 mod tests {
-    use super::compute;
-    use super::parse_part1_input;
-    use super::parse_part2_input;
+    use super::*;
 
     #[test]
     fn part1_sample() {
