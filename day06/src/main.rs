@@ -75,7 +75,7 @@ fn compute(races: Vec<Race>) -> u64 {
             let mut break_count = 0;
 
             for hold in 0..race.time {
-                if let true = get_distance(hold, race.time) > race.dist {
+                if get_distance(hold, race.time) > race.dist {
                     break_count += 1
                 };
             }
@@ -84,6 +84,7 @@ fn compute(races: Vec<Race>) -> u64 {
         .product()
 }
 
+// This is called an attribute macro
 #[cfg(test)]
 mod tests {
     use super::*;
